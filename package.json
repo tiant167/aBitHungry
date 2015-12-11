@@ -1,0 +1,29 @@
+{
+  "name": "aBitHungry",
+  "version": "0.1.0",
+  "description": "i dont want write this now..",
+  "main": "index.js",
+  "scripts": {
+    "test": "wait"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tiant167/aBitHungry.git"
+  },
+  "keywords": [
+    "eat"
+  ],
+  "author": "haotianchai@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiant167/aBitHungry/issues"
+  },
+  "homepage": "https://github.com/tiant167/aBitHungry",
+  "dependencies": {
+    "config": "1.17.1",
+    "express": "4.13.3",
+    "js-yaml": "3.4.6",
+    "lodash": "3.10.1",
+    "morgan": "1.6.1"
+  }
+}
