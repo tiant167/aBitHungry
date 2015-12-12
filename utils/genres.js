@@ -1,10 +1,10 @@
 'use strict';
 
-var _ = require('lodash');
-var project = require('../package');
+let _ = require('lodash');
+let project = require('../package');
 
 function responseSuccess(content, meta) {
-  var data = content;
+  let data = content;
 
   meta = meta || {};
 
@@ -18,9 +18,9 @@ function responseSuccess(content, meta) {
 }
 
 function responseError(err) {
-  var data = err.message;
-  var errorCode = err.errorCode;
-  var text = err.text;
+  let data = err.message;
+  let errorCode = err.errorCode;
+  let text = err.text;
 
   return {
     ok: false,

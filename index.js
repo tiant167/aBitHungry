@@ -1,17 +1,13 @@
 'use strict';
 
-var config = require('config');
-var app = require('./app');
+let config = require('config');
+let koa = require('koa');
+let logger = require('koa-logger');
 
-var server = app.listen(config.get('port'), config.get('host'), function () {
-  console.log('app running on %s', server.address().port);
-});
+let app = koa();
 
-process.once('SIGTERM', function() {
-  server.close(function() {
-    console.log('service is shut down.');
-    process.exit(0);
-  });
-});
+app.use(logger());
+app.use(require('./routers').routes());
 
-console.log('pid', process.pid);
+app.listen(config.get('port'), config.get('host'));
+console.log('app running on %s:%s', config.get('host'), config.get('port'));

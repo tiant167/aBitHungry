@@ -1,2 +1,10 @@
 host: localhost
 port: 3000
+
+mongodb: mongodb://localhost:27017/hungrydb
+mongoDebug: false
+mongoPoolSize: 10
+mongoConnectionTimeout: 5000
+mongoSocketTimeout: 0
+mongoKeeplive: 1
+mongoAutoReconnect: true
