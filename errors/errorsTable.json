@@ -1,0 +1,14 @@
+{
+  "DefaultError": {
+    "statusCode": 400,
+    "message": "Something wrong",
+    "clientMessage": "有一些小错误",
+    "errorCode": 10000
+  },
+  "ParamsError": {
+    "statusCode": 400,
+    "message": "Request params is wrong",
+    "clientMessage": "请求参数有误",
+    "errorCode": 10001
+  }
+}

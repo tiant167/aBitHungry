@@ -7,6 +7,7 @@ let Recipe = require('../db').Recipe;
 let RecipeService = module.exports = {};
 
 RecipeService.getRecipesByLabelsAsync = function(labelEngNames, options) {
+  options = options || {};
   let query = {
     stateValue: { $gte: 0 }
   };
@@ -33,6 +34,19 @@ RecipeService.getRecipesByLabelsAsync = function(labelEngNames, options) {
   }
   if (isPopuateAuthor){
     executeQuery = executeQuery.populate('author', 'avatar nickName sex');
+  }
+  return executeQuery.lean().exec();
+};
+
+RecipeService.getRecipeByIdAsync = function(id, options) {
+  options = options || {};
+  let isPopuateAuthor = true;
+  let executeQuery = Recipe.findOne({ _id: id });
+  if (!_.isUndefined(options.select)) {
+    executeQuery = executeQuery.select(options.select);
+    if (!_.contains(_.keys(options.select), 'author')){
+      isPopuateAuthor = false;
+    }
   }
   return executeQuery.lean().exec();
 };
